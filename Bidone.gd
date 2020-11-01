@@ -12,7 +12,8 @@ var textures := {
 	'yellow':"res://asset/sprite/bidone_giallo.png"
 }
 
-export var active = false
+export (bool) var active := false setget set_active
+
 var posizione=0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -43,7 +44,6 @@ func set_type(value) -> void:
 			text_name = 'yellow'
 	$Sprite.texture = load(textures[text_name])
 
-
 func _physics_process(_delta):
 	if active==true:
 		var velocity=Vector2()
@@ -63,3 +63,8 @@ func _physics_process(_delta):
 				posizione=1
 		move_and_slide(velocity)
 		
+
+func set_active(value) -> void:
+	active = value
+	if active:
+		pass
