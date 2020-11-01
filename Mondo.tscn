@@ -61,15 +61,17 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Bidone" parent="." instance=ExtResource( 2 )]
-position = Vector2( 990.442, 488.555 )
-active = true
-
-[node name="Bidone2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 755.064, 488 )
-
 [node name="Persone" type="Node" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Bidone" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 990.442, 488.555 )
+active = true
+
+[node name="Bidone2" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 755.064, 488 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
