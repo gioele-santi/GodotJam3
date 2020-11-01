@@ -4,7 +4,7 @@
 [ext_resource path="res://asset/sprite/bidone_verde.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 29.6857, 16.616 )
+extents = Vector2( 29.6857, 10.1167 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 22, 2.00336 )
@@ -16,7 +16,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 40 )
+position = Vector2( 0, 70 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -28,3 +28,7 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 0, -22 )
 shape = SubResource( 2 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 0, 60 )
+rotation = 3.6809

@@ -45,6 +45,7 @@ func set_type(value) -> void:
 
 
 func _physics_process(_delta):
+	print($RayCast2D.collide_with_bodies)
 	if active==true:
 		var velocity=Vector2()
 		if Input.is_key_pressed(KEY_RIGHT):
@@ -53,13 +54,15 @@ func _physics_process(_delta):
 				 velocity.x=-500
 		if Input.is_action_just_pressed("ui_up"):
 			if posizione==1:
-				position.y-=40
-				position.x+=40
-				posizione=0
+				#if $RayCast2D.collide_with_bodies==false: COMANDO RAYCAST
+					position.y-=40
+					position.x+=40
+					posizione=0
 		if Input.is_action_just_pressed("ui_down"):
 			if posizione==0:
-				position.y+=40
-				position.x-=40
-				posizione=1
+				#if $RayCast2D.collide_with_bodies==false: COMANDO RAYCAST
+					position.y+=40
+					position.x-=40
+					posizione=1
 		move_and_slide(velocity)
 		
