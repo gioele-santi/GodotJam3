@@ -2,6 +2,8 @@ tool
 extends Area2D
 class_name Rifiuto
 
+onready var sprite = $Sprite
+
 # Impostazione tipo
 enum TRASH_TYPE {APPLE, BOTTLE, MILK, JUICE}
 export (TRASH_TYPE) var type := TRASH_TYPE.APPLE setget set_type
@@ -41,7 +43,8 @@ func set_type(value) -> void:
 			text_name = 'milk'
 		TRASH_TYPE.JUICE:
 			text_name = 'juice'
-	$Sprite.texture = load(textures[text_name])
+	if sprite != null: 
+		sprite.texture = load(textures[text_name])
 
 func move(delta):
 	var exPos = get_position()

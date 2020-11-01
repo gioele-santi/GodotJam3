@@ -2,6 +2,8 @@ tool
 extends KinematicBody2D
 class_name Bidone
 
+onready var sprite = $Sprite
+
 # Impostazione tipo
 enum BIN_TYPE {BLUE, RED, GREEN, YELLOW}
 export (BIN_TYPE) var type := BIN_TYPE.GREEN setget set_type
@@ -12,13 +14,13 @@ var textures := {
 	'yellow':"res://asset/sprite/bidone_giallo.png"
 }
 
-export var active = false
+export (bool) var active := false setget set_active
 var posizione=0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
-func _unhandled_input(event: InputEvent) -> void:
+func _unhandled_input(_event: InputEvent) -> void:
 	if not active: #muovo solo il bidone attivo
 		return
 	
@@ -41,11 +43,18 @@ func set_type(value) -> void:
 			text_name = 'green'
 		BIN_TYPE.YELLOW:
 			text_name = 'yellow'
-	$Sprite.texture = load(textures[text_name])
+	if sprite != null: 
+		sprite.texture = load(textures[text_name])
 
+func set_active(value: bool) -> void:
+	active = value
+	if active:
+		$AnimationPlayer.play("open")
+	else:
+		$AnimationPlayer.play("close")
 
 func _physics_process(_delta):
-	print($RayCast2D.get_collider())
+	#print($RayCast2D.get_collider())
 	if active==true:
 		var velocity=Vector2()
 		if Input.is_key_pressed(KEY_RIGHT):

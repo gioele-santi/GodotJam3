@@ -70,8 +70,10 @@ autostart = true
 
 [node name="Bidone" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 990.442, 488.555 )
-active = true
+type = 2
 
 [node name="Bidone2" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 755.064, 488 )
+type = 2
+active = true
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
