@@ -70,7 +70,6 @@ autostart = true
 
 [node name="Blu" parent="Bidone" instance=ExtResource( 2 )]
 position = Vector2( 544, 488.555 )
-active = true
 
 [node name="Rosso" parent="Bidone" instance=ExtResource( 2 )]
 position = Vector2( 755.064, 488 )

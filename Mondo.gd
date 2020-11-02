@@ -5,34 +5,46 @@ onready var blu: Bidone = $Bidone/Blu
 onready var rosso: Bidone = $Bidone/Rosso
 onready var verde: Bidone = $Bidone/Verde
 onready var giallo: Bidone = $Bidone/Giallo
-var bidoni = [blu, rosso, verde, giallo]
+onready var bidoni = [blu, rosso, verde, giallo]
 
 #in base al punteggio attuale, diminuisce il tempo di spawn
 #vedi spawnTime(score)
 var score = 2
+var playing := false
 
 func _ready() -> void:
 	timer.set_wait_time(spawnTime(score))
-	initialize()
-
-func initialize() -> void:
 	blu.type = 0
 	rosso.type = 1
 	verde.type = 2
-	giallo.type = 3 #vanno settati qui perché export rende la variabile globale
+	giallo.type = 3 
+
+func start_game() -> void:
+	playing = true
+	select_bidone(0)
+	score = 2
+
+func select_bidone(idx: int) ->void:
+	for i in range (0, 4):
+		bidoni[i].active = i == idx
 
 func _process(delta: float) -> void:
 	timer.set_wait_time(spawnTime(score))
 
 func _unhandled_input(event: InputEvent) -> void:
+	if not playing and event.is_action_pressed("action"):
+		start_game()
+	elif not playing:
+		return
+	
 	if event.is_action_pressed("select_blue"):
-		blu.active = true
+		select_bidone(0)
 	if event.is_action_pressed("select_red"):
-		rosso.active = true
+		select_bidone(1)
 	if event.is_action_pressed("select_green"):
-		verde.active = true
+		select_bidone(2)
 	if event.is_action_pressed("select_yellow"):
-		giallo.active = true
+		select_bidone(3)
 
 func _on_Timer_timeout():
 	#una persona viene spawnata
