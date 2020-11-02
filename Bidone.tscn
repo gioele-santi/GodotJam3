@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Bidone.gd" type="Script" id=1]
 [ext_resource path="res://asset/sprite/bidone_rosso.png" type="Texture" id=2]
@@ -97,6 +97,34 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 
+[sub_resource type="Animation" id=7]
+resource_name = "setup"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
 [node name="Bidone" type="KinematicBody2D"]
 script = ExtResource( 1 )
 __meta__ = {
@@ -111,13 +139,13 @@ shape = SubResource( 1 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 hframes = 5
-frame = 2
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 0, -22 )
 shape = SubResource( 2 )
+disabled = true
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2( 0, 60 )
@@ -131,4 +159,5 @@ anims/bump = SubResource( 5 )
 anims/close = SubResource( 3 )
 anims/full = SubResource( 6 )
 anims/open = SubResource( 4 )
+anims/setup = SubResource( 7 )
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

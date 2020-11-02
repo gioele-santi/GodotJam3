@@ -35,6 +35,8 @@ func set_type(value) -> void:
 		sprite.texture = load(textures[text_name])
 
 func set_active(value: bool) -> void:
+	if value == active:
+		return
 	active = value
 	if active:
 		$AnimationPlayer.play("open")
