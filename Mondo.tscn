@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://asset/sprite/sfondo.png" type="Texture" id=1]
 [ext_resource path="res://Bidone.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Mondo.gd" type="Script" id=3]
+[ext_resource path="res://Albero.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 22.9269, 89.3548 )
@@ -79,4 +80,8 @@ position = Vector2( 904, 488.555 )
 
 [node name="Giallo" parent="Bidone" instance=ExtResource( 2 )]
 position = Vector2( 640, 488 )
+
+[node name="Albero" parent="." instance=ExtResource( 4 )]
+position = Vector2( 48, 536 )
+scale = Vector2( 2, 2 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
