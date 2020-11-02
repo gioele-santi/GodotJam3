@@ -82,6 +82,7 @@ func _bump() -> void:
 
 func _on_Area2D_area_entered(area):
 	if(area is Rifiuto):
+		area.queue_free() #si potrebbe aggiungere un'animazione per farlo sparire gradualmente
 		if(area.type == self.type):
 			print("Punteggio e salute aumentati - suono _ok_")
 		else:
