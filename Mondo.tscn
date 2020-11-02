@@ -66,14 +66,18 @@ __meta__ = {
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[node name="YSort" type="YSort" parent="."]
+[node name="Bidone" type="YSort" parent="."]
 
-[node name="Bidone" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 990.442, 488.555 )
-type = 2
-
-[node name="Bidone2" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 755.064, 488 )
-type = 2
+[node name="Blu" parent="Bidone" instance=ExtResource( 2 )]
+position = Vector2( 544, 488.555 )
 active = true
+
+[node name="Rosso" parent="Bidone" instance=ExtResource( 2 )]
+position = Vector2( 755.064, 488 )
+
+[node name="Verde" parent="Bidone" instance=ExtResource( 2 )]
+position = Vector2( 904, 488.555 )
+
+[node name="Giallo" parent="Bidone" instance=ExtResource( 2 )]
+position = Vector2( 640, 488 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
