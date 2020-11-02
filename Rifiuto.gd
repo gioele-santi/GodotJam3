@@ -1,4 +1,4 @@
-tool
+#tool
 extends Area2D
 class_name Rifiuto
 
@@ -6,7 +6,7 @@ onready var sprite = $Sprite
 
 # Impostazione tipo
 enum TRASH_TYPE {APPLE, BOTTLE, MILK, JUICE}
-var type #vedi initialize -> set_type -> type = value
+var type = TRASH_TYPE.APPLE setget set_type
 var textures := {
 	'apple': "res://asset/sprite/torsolo.png",
 	'bottle': "res://asset/sprite/bottiglia.png",

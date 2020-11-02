@@ -62,4 +62,10 @@ func _physics_process(_delta):
 					position.x-=40
 					posizione=1
 		move_and_slide(velocity)
-		
+
+func _on_Area2D_area_entered(area):
+	if(area is Rifiuto):
+		if(area.type == self.type):
+			print("Punteggio e salute aumentati - suono _ok_")
+		else:
+			print("Salute diminuita - suono _hai sbagliato_")
