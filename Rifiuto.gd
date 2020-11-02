@@ -6,7 +6,7 @@ onready var sprite = $Sprite
 
 # Impostazione tipo
 enum TRASH_TYPE {APPLE, BOTTLE, MILK, JUICE}
-export (TRASH_TYPE) var type := TRASH_TYPE.APPLE setget set_type
+var type #vedi initialize -> set_type -> type = value
 var textures := {
 	'apple': "res://asset/sprite/torsolo.png",
 	'bottle': "res://asset/sprite/bottiglia.png",
@@ -43,8 +43,8 @@ func set_type(value) -> void:
 			text_name = 'milk'
 		TRASH_TYPE.JUICE:
 			text_name = 'juice'
-	if sprite != null: 
-		sprite.texture = load(textures[text_name])
+	if $Sprite != null: 
+		$Sprite.texture = load(textures[text_name])
 
 func move(delta):
 	var exPos = get_position()

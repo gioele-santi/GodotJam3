@@ -30,7 +30,6 @@ var xAround = 10
 func _ready():
 	initSpawn()
 	trashSpawnPosition = int(rand_range(widthSpawnBound[0] + tsp_xOffset, widthSpawnBound[1] - tsp_xOffset))
-	print(trashSpawnPosition)
 	
 func _process(delta):
 	setNewPosition(delta) #nuova posizione, controllo di esistenza, di spawn rifiuto
