@@ -57,13 +57,13 @@ func _physics_process(delta):
 				 velocity.x=-500
 		if Input.is_action_just_pressed("ui_up"):
 			if posizione==1:
-				if $RayCast2D.is_colliding()==false and $RayCast2D2.is_colliding()==false and velocity.x==0: 
+				if $RayCast2D.is_colliding() == false and $RayCast2D2.is_colliding() == false and velocity.x == 0: 
 					position.y-=40
 					position.x+=40
 					posizione=0
 		if Input.is_action_just_pressed("ui_down"):
 			if posizione==0:
-				if $RayCast2D.is_colliding()==false and $RayCast2D2.is_colliding()==false and velocity.x==0 :
+				if $RayCast2D.is_colliding() == false and $RayCast2D2.is_colliding() == false and velocity.x == 0 :
 					position.y+=40
 					position.x-=40
 					posizione=1
