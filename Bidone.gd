@@ -16,6 +16,10 @@ var textures := {
 var active := false setget set_active
 var posizione = 0
 # Called when the node enters the scene tree for the first time.
+
+var bumpable := true
+var bump_once := true
+
 func _ready() -> void:
 	pass # Replace with function body.
 
@@ -43,7 +47,7 @@ func set_active(value: bool) -> void:
 	else:
 		$AnimationPlayer.play("close")
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	#print($RayCast2D.get_collider())
 	if active==true:
 		var velocity=Vector2()
@@ -63,11 +67,28 @@ func _physics_process(_delta):
 					position.y+=40
 					position.x-=40
 					posizione=1
-		move_and_slide(velocity)
+		var collision = move_and_collide(velocity * delta)
+		if collision:
+			if collision.collider.has_method("_bump") and bump_once: 
+				bump_once = false
+				collision.collider._bump()
+		else:
+			bump_once = true
+
+func _bump() -> void:
+	if bumpable:
+		bumpable = false
+		$AnimationPlayer.play("bump")
 
 func _on_Area2D_area_entered(area):
 	if(area is Rifiuto):
 		if(area.type == self.type):
 			print("Punteggio e salute aumentati - suono _ok_")
 		else:
+			$AnimationPlayer.play("full")
 			print("Salute diminuita - suono _hai sbagliato_")
+
+
+func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
+	if anim_name == "bump":
+		bumpable = true
