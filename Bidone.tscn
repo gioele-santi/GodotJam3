@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Bidone.gd" type="Script" id=1]
 [ext_resource path="res://asset/sprite/bidone_rosso.png" type="Texture" id=2]
@@ -7,7 +7,23 @@
 extents = Vector2( 29.6857, 10.1167 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 22, 2.00336 )
+extents = Vector2( 22, 6 )
+
+[sub_resource type="Animation" id=5]
+resource_name = "bump"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 3, 0 ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "close"
@@ -35,6 +51,22 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "full"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 4, 2 ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -78,7 +110,7 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
-hframes = 3
+hframes = 5
 frame = 2
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -95,6 +127,8 @@ enabled = true
 cast_to = Vector2( 0, 100 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/bump = SubResource( 5 )
 anims/close = SubResource( 3 )
+anims/full = SubResource( 6 )
 anims/open = SubResource( 4 )
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
