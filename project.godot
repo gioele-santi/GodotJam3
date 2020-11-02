@@ -15,6 +15,11 @@ _global_script_classes=[ {
 "path": "res://Bidone.gd"
 }, {
 "base": "Node2D",
+"class": "Foglia",
+"language": "GDScript",
+"path": "res://Foglia.gd"
+}, {
+"base": "Node2D",
 "class": "Persona",
 "language": "GDScript",
 "path": "res://src/Persona.gd"
@@ -26,6 +31,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Bidone": "",
+"Foglia": "",
 "Persona": "",
 "Rifiuto": ""
 }
