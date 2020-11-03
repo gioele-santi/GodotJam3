@@ -33,7 +33,7 @@ noise = SubResource( 2 )
 
 [resource]
 shader = SubResource( 1 )
-shader_param/uv_displacement = 0.1
+shader_param/uv_displacement = 0.0
 shader_param/time_multiplier = 0.3
 shader_param/noise = SubResource( 3 )
 shader_param/displacement_mask = ExtResource( 1 )

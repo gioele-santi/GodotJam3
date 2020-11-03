@@ -49,7 +49,7 @@ func set_active(value: bool) -> void:
 	else:
 		$AnimationPlayer.play("close")
 
-func _input(event):
+func _process(delta):
 	movementInput()
 
 func movementInput() -> void:
@@ -61,16 +61,16 @@ func movementInput() -> void:
 		if($LeftRaycast.is_colliding() == false):
 			newPosition.x -= horizontalShift
 			
-	if Input.is_action_just_pressed("ui_right"):
+	else: if Input.is_action_just_pressed("ui_right"):
 		if($RightRaycast.is_colliding() == false):
 			newPosition.x += horizontalShift
 			
-	if Input.is_action_just_pressed("ui_up"):
+	else: if Input.is_action_just_pressed("ui_up"):
 		if($UpRaycast.is_colliding() == false):
 			newPosition.x += verticalShift_x
 			newPosition.y -= verticalShift_y
 	
-	if Input.is_action_just_pressed("ui_down"):
+	else: if Input.is_action_just_pressed("ui_down"):
 		if($DownRaycast.is_colliding() == false):
 			newPosition.x -= verticalShift_x
 			newPosition.y += verticalShift_y
