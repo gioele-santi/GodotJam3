@@ -8,9 +8,9 @@ enum BIN_TYPE {RED, GREEN, BLUE, YELLOW}
 var type = BIN_TYPE.BLUE setget set_type
 var textures := {
 	'red': "res://asset/sprite/bidone_rosso_num.png",
-	'green': "res://asset/sprite/bidone_verde.png",
+	'green': "res://asset/sprite/bidone_verde_num.png",
 	'blue': "res://asset/sprite/bidone_blu_num.png",
-	'yellow':"res://asset/sprite/bidone_giallo_num.png"
+	'yellow':"res://asset/sprite/bidone_giallo.png"
 }
 
 var active := false setget set_active
