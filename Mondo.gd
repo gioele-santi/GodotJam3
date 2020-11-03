@@ -37,11 +37,11 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif not playing:
 		return
 	
-	if event.is_action_pressed("select_blue"):
-		select_bidone(0)
 	if event.is_action_pressed("select_red"):
-		select_bidone(1)
+		select_bidone(0)
 	if event.is_action_pressed("select_green"):
+		select_bidone(1)
+	if event.is_action_pressed("select_blue"):
 		select_bidone(2)
 	if event.is_action_pressed("select_yellow"):
 		select_bidone(3)

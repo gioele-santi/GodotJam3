@@ -4,7 +4,7 @@ class_name Bidone
 onready var sprite = $Sprite
 
 # Impostazione tipo
-enum BIN_TYPE {BLUE, RED, GREEN, YELLOW}
+enum BIN_TYPE {RED, GREEN, BLUE, YELLOW}
 var type = BIN_TYPE.BLUE setget set_type
 var textures := {
 	'red': "res://asset/sprite/bidone_rosso.png",
@@ -29,12 +29,12 @@ func set_type(value) -> void:
 	type = value
 	var text_name: String = ''
 	match type:
-		BIN_TYPE.BLUE:
-			text_name = 'blue'
 		BIN_TYPE.RED:
 			text_name = 'red'
 		BIN_TYPE.GREEN:
 			text_name = 'green'
+		BIN_TYPE.BLUE:
+			text_name = 'blue'
 		BIN_TYPE.YELLOW:
 			text_name = 'yellow'
 	if sprite != null: 
