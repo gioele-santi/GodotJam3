@@ -10,7 +10,7 @@ var textures := {
 	'red': "res://asset/sprite/bidone_rosso_num.png",
 	'green': "res://asset/sprite/bidone_verde.png",
 	'blue': "res://asset/sprite/bidone_blu_num.png",
-	'yellow':"res://asset/sprite/bidone_giallo.png"
+	'yellow':"res://asset/sprite/bidone_giallo_num.png"
 }
 
 var active := false setget set_active
