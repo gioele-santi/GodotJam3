@@ -89,7 +89,7 @@ func _on_Area2D_area_entered(area):
 		area.queue_free() #si potrebbe aggiungere un'animazione per farlo sparire gradualmente
 		if(area.type == self.type):
 			scoreUp()
-			if(area.type == 3):
+			if(area.type == 1):
 				sfx = load("res://asset/audio/sfx/glass.wav")
 			else:
 				sfx = load("res://asset/audio/sfx/trash_in_can.wav")
