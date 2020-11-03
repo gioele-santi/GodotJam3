@@ -14,7 +14,7 @@ var textures := {
 	'juice': "res://asset/sprite/succo.png"
 }
 
-export (int) var speed = 250
+export (int) var speed = 60
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,9 +24,6 @@ func _process(delta):
 	move(delta)
 
 func initialize(position: Vector2) -> void:
-	#prendi la posizione di partenza, eventualmente aggiungere il tipo
-	#per il tipo usare un valore intero 0 = mela etc...
-	#perché da un altro script ha problemi a leggere gli enum
 	self.position = position
 	set_type(randi()%textures.size())
 	pass

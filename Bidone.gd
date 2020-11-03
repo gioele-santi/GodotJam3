@@ -15,7 +15,7 @@ var textures := {
 
 var active := false setget set_active
 var posizione = 0 #corsia 0 oppure 1
-var horizontalShift = 80 #numero pixel spostamento orrizontale
+const horizontalShift = 80 #numero pixel spostamento orrizontale
 var verticalShift_y = 30
 var verticalShift_x = 20
 

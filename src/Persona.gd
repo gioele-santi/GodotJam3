@@ -25,11 +25,11 @@ const tsp_xOffset = 200
 #Puo' darsi che Persona.position.x != trashSpawnPosition
 #ci va bene anche solo un intorno di trashSpawnPosition ma evitiamo spawn spam
 var trashSpawned = false
-var xAround = 10
+var xAround = 1
 
 func _ready():
 	initSpawn()
-	trashSpawnPosition = int(rand_range(widthSpawnBound[0] + tsp_xOffset, widthSpawnBound[1] - tsp_xOffset))
+	trashSpawnPosition = getTrashSpawnPosition()
 	
 func _process(delta):
 	setNewPosition(delta) #nuova posizione, controllo di esistenza, di spawn rifiuto
@@ -60,6 +60,14 @@ func setNewPosition(delta):
 			trashSpawned = true
 	
 	set_position(Vector2(exPos.x, exPos.y))
+
+func getTrashSpawnPosition():
+	var pos = int(rand_range(widthSpawnBound[0] + tsp_xOffset, widthSpawnBound[1] - tsp_xOffset))
+	var shift = Bidone.horizontalShift
+	pos = int(pos / shift) * shift #integer division is considered
+	pos += 45
+	print(pos)
+	return pos
 
 func throw():
 	emit_signal("spawn", get_position() )
