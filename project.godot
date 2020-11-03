@@ -39,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="JamItalia3"
-run/main_scene="res://addons/godotengine-italia-jam/IntroScene.tscn"
+run/main_scene="res://Mondo.tscn"
 config/icon="res://icon.png"
 
 [input]
