@@ -37,26 +37,54 @@ __meta__ = {
 
 [node name="Barriere invisibili" type="Node" parent="."]
 
-[node name="muro invisibile" type="StaticBody2D" parent="Barriere invisibili"]
-position = Vector2( -8.79041, 555.555 )
+[node name="muroSopra" type="StaticBody2D" parent="Barriere invisibili"]
+position = Vector2( 809.701, 507.343 )
+scale = Vector2( 24.983, 0.152 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Barriere invisibili/muro invisibile"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barriere invisibili/muroSopra"]
 position = Vector2( -9.24588, -43.4006 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="muro invisibile2" type="StaticBody2D" parent="Barriere invisibili"]
+[node name="muroSotto" type="StaticBody2D" parent="Barriere invisibili"]
+position = Vector2( 809.701, 620.586 )
+scale = Vector2( 24.983, 0.152 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barriere invisibili/muroSotto"]
+position = Vector2( -9.24588, -43.4006 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="muroSinistra" type="StaticBody2D" parent="Barriere invisibili"]
+position = Vector2( -8.79041, 555.555 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barriere invisibili/muroSinistra"]
+position = Vector2( -9.24588, -43.4006 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="muroDestra" type="StaticBody2D" parent="Barriere invisibili"]
 position = Vector2( 1052.3, 555.555 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Barriere invisibili/muro invisibile2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barriere invisibili/muroDestra"]
 position = Vector2( -9.24588, -43.4006 )
 shape = SubResource( 1 )
 __meta__ = {
@@ -74,16 +102,16 @@ autostart = true
 [node name="Bidone" type="YSort" parent="."]
 
 [node name="Blu" parent="Bidone" instance=ExtResource( 2 )]
-position = Vector2( 544, 488.555 )
+position = Vector2( 120, 480 )
 
 [node name="Rosso" parent="Bidone" instance=ExtResource( 2 )]
-position = Vector2( 755.064, 488 )
+position = Vector2( 360, 480 )
 
 [node name="Verde" parent="Bidone" instance=ExtResource( 2 )]
-position = Vector2( 904, 488.555 )
+position = Vector2( 600, 480 )
 
 [node name="Giallo" parent="Bidone" instance=ExtResource( 2 )]
-position = Vector2( 640, 488 )
+position = Vector2( 840, 480 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )

@@ -145,19 +145,33 @@ position = Vector2( 0, -22 )
 shape = SubResource( 2 )
 disabled = true
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
+[node name="RightRaycast" type="RayCast2D" parent="."]
 position = Vector2( 0, 60 )
-rotation = 3.87463
+rotation = 4.71239
 scale = Vector2( 5, 1 )
 enabled = true
-cast_to = Vector2( 0, 100 )
+cast_to = Vector2( 0, 80 )
 
-[node name="RayCast2D2" type="RayCast2D" parent="."]
+[node name="LeftRaycast" type="RayCast2D" parent="."]
 position = Vector2( 0, 60 )
-rotation = 0.834267
+rotation = 1.5708
 scale = Vector2( 5, 1 )
 enabled = true
-cast_to = Vector2( 0, 100 )
+cast_to = Vector2( 0, 80 )
+
+[node name="UpRaycast" type="RayCast2D" parent="."]
+position = Vector2( 0, 60 )
+rotation = 3.49066
+scale = Vector2( 5, 1 )
+enabled = true
+cast_to = Vector2( 0, 37 )
+
+[node name="DownRaycast" type="RayCast2D" parent="."]
+position = Vector2( 0, 60 )
+rotation = 0.349066
+scale = Vector2( 5, 1 )
+enabled = true
+cast_to = Vector2( 0, 37 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/bump = SubResource( 3 )
@@ -167,5 +181,6 @@ anims/open = SubResource( 6 )
 anims/setup = SubResource( 7 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[connection signal="input_event" from="." to="." method="_on_Bidone_input_event"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
