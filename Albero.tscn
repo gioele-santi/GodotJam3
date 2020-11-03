@@ -1,10 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://asset/sprite/albero.png" type="Texture" id=1]
 [ext_resource path="res://Albero.gd" type="Script" id=2]
+[ext_resource path="res://Foglia.tscn" type="PackedScene" id=3]
 
 [node name="Albero" type="Node2D"]
+position = Vector2( 92, 196 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+Foglia_scene = ExtResource( 3 )
 
 [node name="Sprite" type="Node2D" parent="."]
 
@@ -75,3 +81,5 @@ position = Vector2( 0, -72 )
 
 [node name="4" type="Position2D" parent="LeftPos"]
 position = Vector2( -4, -52 )
+
+[node name="Foglie" type="Node2D" parent="."]

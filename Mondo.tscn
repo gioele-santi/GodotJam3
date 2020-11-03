@@ -65,6 +65,9 @@ __meta__ = {
 
 [node name="Persone" type="Node" parent="."]
 
+[node name="Albero" parent="." instance=ExtResource( 4 )]
+position = Vector2( 48, 536 )
+
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
@@ -81,10 +84,6 @@ position = Vector2( 904, 488.555 )
 
 [node name="Giallo" parent="Bidone" instance=ExtResource( 2 )]
 position = Vector2( 640, 488 )
-
-[node name="Albero" parent="." instance=ExtResource( 4 )]
-position = Vector2( 48, 536 )
-scale = Vector2( 2, 2 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
