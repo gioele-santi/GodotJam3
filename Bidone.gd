@@ -7,9 +7,9 @@ onready var sprite = $Sprite
 enum BIN_TYPE {BLUE, RED, GREEN, YELLOW}
 var type = BIN_TYPE.BLUE setget set_type
 var textures := {
-	'blue': "res://asset/sprite/bidone_blu.png",
 	'red': "res://asset/sprite/bidone_rosso.png",
 	'green': "res://asset/sprite/bidone_verde.png",
+	'blue': "res://asset/sprite/bidone_blu.png",
 	'yellow':"res://asset/sprite/bidone_giallo.png"
 }
 
