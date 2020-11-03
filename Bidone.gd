@@ -81,13 +81,21 @@ func _bump() -> void:
 		$AnimationPlayer.play("bump")
 
 func _on_Area2D_area_entered(area):
+	var sfx
 	if(area is Rifiuto):
 		area.queue_free() #si potrebbe aggiungere un'animazione per farlo sparire gradualmente
 		if(area.type == self.type):
 			print("Punteggio e salute aumentati - suono _ok_")
+			if(self.type == 3):
+				sfx = load("res://asset/audio/sfx/glass.wav")
+			else:
+				sfx = load("res://asset/audio/sfx/trash_in_can.wav")
 		else:
 			$AnimationPlayer.play("full")
 			print("Salute diminuita - suono _hai sbagliato_")
+			sfx = load("res://asset/audio/sfx/wrong.wav")
+		$AudioStreamPlayer.stream = sfx
+		$AudioStreamPlayer.play()
 
 
 func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
