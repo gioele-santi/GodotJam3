@@ -118,14 +118,13 @@ clouds = [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 9 ) ]
 [node name="Sky" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.384314, 0.647059, 0.690196, 1 )
+color = Color( 0.4, 0.25098, 0.384314, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Particles2D2" type="CPUParticles2D" parent="."]
 position = Vector2( -54.1636, 257.211 )
-emitting = false
 amount = 40
 lifetime = 5.0
 texture = ExtResource( 6 )
@@ -143,7 +142,6 @@ __meta__ = {
 
 [node name="Particles2D" type="CPUParticles2D" parent="Control"]
 position = Vector2( -54.1636, 257.211 )
-emitting = false
 amount = 15
 lifetime = 5.0
 texture = ExtResource( 6 )
@@ -151,7 +149,6 @@ initial_velocity = 424.24
 initial_velocity_random = 0.46
 
 [node name="TextureRect" type="TextureRect" parent="Control"]
-modulate = Color( 0.298039, 0.913725, 0.843137, 1 )
 material = ExtResource( 5 )
 margin_left = -19.5914
 margin_top = -19.3058
@@ -192,7 +189,6 @@ margin_bottom = 283.0
 size_flags_horizontal = 3
 
 [node name="Label" type="RichTextLabel" parent="Container/VBoxContainer"]
-modulate = Color( 1, 1, 1, 0 )
 margin_right = 602.0
 margin_bottom = 127.0
 size_flags_horizontal = 3
@@ -204,7 +200,6 @@ text = "Godot engine italia"
 scroll_active = false
 
 [node name="Label2" type="Label" parent="Container/VBoxContainer"]
-modulate = Color( 1, 1, 1, 0 )
 margin_top = 131.0
 margin_right = 602.0
 margin_bottom = 205.0
@@ -213,7 +208,6 @@ custom_fonts/font = ExtResource( 3 )
 text = "Game jam #3"
 
 [node name="Label3" type="Label" parent="Container/VBoxContainer"]
-modulate = Color( 1, 1, 1, 0 )
 margin_top = 209.0
 margin_right = 602.0
 margin_bottom = 283.0
