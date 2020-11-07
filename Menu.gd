@@ -8,6 +8,7 @@ extends MarginContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$CenterContainer/VBoxContainer/Play.grab_focus()
 	pass # Replace with function body.
 
 
