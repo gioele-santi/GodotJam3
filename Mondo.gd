@@ -9,7 +9,7 @@ onready var bidoni = [blu, rosso, verde, giallo]
 
 #in base al punteggio attuale, diminuisce il tempo di spawn
 #vedi spawnTime(score)
-var score = 2
+var score = 0
 var playing := false
 
 func _ready() -> void:
@@ -22,7 +22,7 @@ func _ready() -> void:
 func start_game() -> void:
 	playing = true
 	select_bidone(0)
-	score = 2
+	score = 0
 
 func select_bidone(idx: int) ->void:
 	for i in range (0, 4):
@@ -61,3 +61,10 @@ func _on_trash_throw(trashPosition):
 	var rifiutoInstance = rifiutoScene.instance()
 	rifiutoInstance.initialize(trashPosition)
 	get_node("Rifiuti").add_child(rifiutoInstance);
+
+func scoreUp():
+	score = score + 1
+	print(score)
+
+func scoreDown():
+	score = score - 1

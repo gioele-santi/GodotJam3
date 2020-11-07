@@ -106,11 +106,11 @@ func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
 		bumpable = true
 
 func scoreUp():
-	print("Punteggio e salute aumentati - suono _ok_")
+	get_parent().get_parent().scoreUp()
 	pass
 
 func scoreDown():
-	print("Salute diminuita - suono _hai sbagliato_")
+	get_parent().get_parent().scoreDown()
 	pass
 
 #deprecated _physics_process

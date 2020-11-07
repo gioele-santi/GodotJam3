@@ -49,7 +49,6 @@ func _leaf_did_fall(index) -> void:
 		var next: Foglia = $Foglie.get_child(1) #chiamato prima di queue free
 		next.dry()
 
-
 func set_score(value: int) -> void:
 	if value < score:
 		score = max(0, value)
