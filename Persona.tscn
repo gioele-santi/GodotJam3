@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/Persona.gd" type="Script" id=1]
-[ext_resource path="res://asset/sprite/persona_sheet.png" type="Texture" id=2]
+[ext_resource path="res://asset/sprite/walk_cycle.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "walk"
@@ -27,6 +27,7 @@ script = ExtResource( 1 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 hframes = 8
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "walk"
