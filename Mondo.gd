@@ -32,11 +32,6 @@ func _process(delta: float) -> void:
 	timer.set_wait_time(spawnTime(score))
 
 func _unhandled_input(event: InputEvent) -> void:
-	if not playing and event.is_action_pressed("action"):
-		start_game()
-	elif not playing:
-		return
-	
 	if event.is_action_pressed("select_red"):
 		select_bidone(0)
 	if event.is_action_pressed("select_green"):
