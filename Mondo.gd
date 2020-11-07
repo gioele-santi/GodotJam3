@@ -57,9 +57,15 @@ func _on_trash_throw(trashPosition):
 	rifiutoInstance.initialize(trashPosition)
 	get_node("Rifiuti").add_child(rifiutoInstance);
 
+func refreshScore():
+	$Score/RichTextLabel.bbcode_text = "[center][rainbow]"
+	$Score/RichTextLabel.bbcode_text += str(score)
+
 func scoreUp():
 	score = score + 1
-	print(score)
-
+	refreshScore()
+	#-------
+	
 func scoreDown():
-	score = score - 1
+	#-------
+	pass

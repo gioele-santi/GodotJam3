@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://asset/sprite/sfondo.png" type="Texture" id=1]
 [ext_resource path="res://Bidone.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Albero.tscn" type="PackedScene" id=4]
 [ext_resource path="res://asset/audio/bgm/bgm1.wav" type="AudioStream" id=5]
 [ext_resource path="res://asset/sprite/nuovo_sfondo.png" type="Texture" id=6]
+[ext_resource path="res://asset/fonts/title.tres" type="DynamicFont" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 22.9269, 89.3548 )
@@ -122,4 +123,35 @@ position = Vector2( 840, 480 )
 stream = ExtResource( 5 )
 volume_db = -6.0
 autoplay = true
+
+[node name="Score" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.068
+anchor_right = 0.5
+anchor_bottom = 0.068
+margin_left = -75.16
+margin_top = -34.8
+margin_right = 74.84
+margin_bottom = 35.2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Score"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -148.0
+margin_top = -29.0
+margin_right = 162.0
+margin_bottom = 44.0
+size_flags_horizontal = 0
+custom_fonts/normal_font = ExtResource( 7 )
+bbcode_enabled = true
+bbcode_text = "[center][rainbow]0[/rainbow][/center]"
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

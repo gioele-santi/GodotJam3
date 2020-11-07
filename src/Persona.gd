@@ -13,9 +13,9 @@ var heightSpawnBound = [128, 160] #altezza minima e massima di spawn
 
 #questi lavorano insieme, in base al "workIndex" settato in initSpawn()
 var workIndex
-var widthSpawnBound = [50, 1000]
+var widthSpawnBound = [-50, 1200]
 var direction = [+1, -1]
-var destroyAtPosition = [1000, 50]
+var destroyAtPosition = [1200, -50]
 
 #Persona spawna un Rifiuto ad un certo punto (asse x) 
 #compreso tra widthSpawnBound[0] e widthSpawnBound[1] con un certo offset
@@ -66,7 +66,6 @@ func getTrashSpawnPosition():
 	var shift = Bidone.horizontalShift
 	pos = int(pos / shift) * shift #integer division is considered
 	pos += 45
-	print(pos)
 	return pos
 
 func throw():
