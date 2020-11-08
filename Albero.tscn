@@ -83,3 +83,9 @@ position = Vector2( 0, -72 )
 position = Vector2( -4, -52 )
 
 [node name="Foglie" type="Node2D" parent="."]
+
+[node name="Cadenti" type="Node2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
