@@ -15,14 +15,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
-		$CenterContainer/VBoxContainer/Play.visible = true
-		$CenterContainer/VBoxContainer/Howto.visible = true
-		$CenterContainer/VBoxContainer/Credits.visible = true
-		$CenterContainer/VBoxContainer/Quit.visible = true
-		
-		$CenterContainer/VBoxContainer/CreditsText.visible = false
-		$CenterContainer/VBoxContainer/HowtoText.visible = false
-#	pass
+		show_menu()
 
 
 func _on_Play_pressed():
@@ -41,6 +34,19 @@ func _on_Quit_pressed():
 func _on_Howto_pressed():
 	hidemenu()
 	$CenterContainer/VBoxContainer/HowtoText.visible = true
+	
+
+func show_menu():
+	$CenterContainer/VBoxContainer/Play.visible = true
+	$CenterContainer/VBoxContainer/Howto.visible = true
+	$CenterContainer/VBoxContainer/Credits.visible = true
+	$CenterContainer/VBoxContainer/Quit.visible = true
+	
+	if $CenterContainer/VBoxContainer/CreditsText.visible or $CenterContainer/VBoxContainer/HowtoText.visible:
+		$CenterContainer/VBoxContainer/Play.grab_focus()
+	
+	$CenterContainer/VBoxContainer/CreditsText.visible = false
+	$CenterContainer/VBoxContainer/HowtoText.visible = false
 	
 
 func hidemenu():

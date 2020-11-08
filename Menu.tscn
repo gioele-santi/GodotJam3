@@ -109,14 +109,15 @@ flat = true
 visible = false
 margin_top = 500.0
 margin_right = 724.0
-margin_bottom = 500.0
+margin_bottom = 700.0
 grow_vertical = 0
+rect_min_size = Vector2( 0, 200 )
 custom_fonts/normal_font = ExtResource( 1 )
 bbcode_enabled = true
-bbcode_text = "[center]Open the first trashcan using the spacebar. Select the trashcans with the keys 1-4 and move them with the arrow keys. The tree on the left is your healthbar.
+bbcode_text = "[center]Select the trashcans with the keys 1-4 and move them with the arrow keys. The tree on the left is your healthbar.
 
 (press spacebar to return to the menu)"
-text = "Open the first trashcan using the spacebar. Select the trashcans with the keys 1-4 and move them with the arrow keys. The tree on the left is your healthbar.
+text = "Select the trashcans with the keys 1-4 and move them with the arrow keys. The tree on the left is your healthbar.
 
 (press spacebar to return to the menu)"
 scroll_active = false
@@ -125,8 +126,9 @@ scroll_active = false
 visible = false
 margin_top = 500.0
 margin_right = 724.0
-margin_bottom = 500.0
+margin_bottom = 700.0
 grow_vertical = 0
+rect_min_size = Vector2( 0, 200 )
 custom_fonts/normal_font = ExtResource( 1 )
 bbcode_enabled = true
 bbcode_text = "[center]Joel: Graphics, programming
