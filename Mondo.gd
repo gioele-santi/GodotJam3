@@ -7,6 +7,8 @@ onready var verde: Bidone = $Bidone/Verde
 onready var giallo: Bidone = $Bidone/Giallo
 onready var bidoni = [blu, rosso, verde, giallo]
 
+onready var albero: Albero = $Albero
+
 #in base al punteggio attuale, diminuisce il tempo di spawn
 #vedi spawnTime(score)
 var score = 0
@@ -63,9 +65,14 @@ func refreshScore():
 
 func scoreUp():
 	score = score + 1
+	albero.score += 1
 	refreshScore()
 	#-------
 	
 func scoreDown():
+	albero.score -= 1
 	#-------
-	pass
+
+
+func _on_Albero_gameover() -> void:
+	print("Gioco finito, cambiare schermata o dare un messaggio")

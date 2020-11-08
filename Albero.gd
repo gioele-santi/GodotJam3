@@ -1,5 +1,5 @@
 extends Node2D
-
+class_name Albero
 signal gameover
 
 export (PackedScene) var Foglia_scene
