@@ -27,7 +27,7 @@ func reset() -> void:
 #solo test
 #func _unhandled_input(event: InputEvent) -> void:
 #	if event.is_action_pressed("action"):
-#		self.score += 1
+#		self.score -= 1
 
 func add_leaf(index: int) -> void:
 	var leaf: Foglia = Foglia_scene.instance()
@@ -75,6 +75,8 @@ func check_gameover() -> bool:
 		print("GAME OVER")
 		emit_signal("gameover")
 		$Timer.stop()
+		for remainder in $Foglie.get_children():
+			remainder.fall()
 		return true
 	return false
 
