@@ -47,3 +47,9 @@ func move(delta):
 	var exPos = get_position()
 	exPos.y += (delta * speed)
 	set_position(Vector2(exPos.x, exPos.y))
+
+func _on_Rifiuto_area_entered(area):
+	#if trash is out of screen bound
+	if(get_position().y >= 570):
+		get_parent().get_parent().scoreDown()
+		queue_free()

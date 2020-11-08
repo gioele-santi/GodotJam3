@@ -18,3 +18,4 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
+[connection signal="area_entered" from="." to="." method="_on_Rifiuto_area_entered"]

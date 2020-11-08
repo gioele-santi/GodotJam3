@@ -51,7 +51,10 @@ func _on_Timer_timeout():
 	personaInstance.connect("spawn", self, "_on_trash_throw")
 
 func spawnTime(score) -> float:
-	return 3+(4/(score+1))
+	if score >= 15:
+		return 1.5
+	else:
+		return score*(-0.2)+4.5
 
 func _on_trash_throw(trashPosition):
 	var rifiutoScene = load("res://Rifiuto.tscn")
@@ -72,7 +75,6 @@ func scoreUp():
 func scoreDown():
 	albero.score -= 1
 	#-------
-
 
 func _on_Albero_gameover() -> void:
 	print("Gioco finito, cambiare schermata o dare un messaggio")
