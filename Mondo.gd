@@ -65,6 +65,7 @@ func _on_trash_throw(trashPosition):
 	var rifiutoScene = load("res://Rifiuto.tscn")
 	var rifiutoInstance = rifiutoScene.instance()
 	rifiutoInstance.initialize(trashPosition)
+	rifiutoInstance.speed = rifiutoInstance.speed + score
 	get_node("Rifiuti").add_child(rifiutoInstance);
 
 func refreshScore():
@@ -82,7 +83,4 @@ func scoreDown():
 	#-------
 
 func _on_Albero_gameover() -> void:
-	print("Gioco finito, cambiare schermata o dare un messaggio")
-	bgm = load("res://asset/audio/bgm/gameover.wav")
-	$AudioStreamPlayer.stream = bgm
-	$AudioStreamPlayer.play()
+	get_tree().change_scene("res://Gameover.tscn")
