@@ -68,7 +68,6 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Barriere invisibili/muroSotto"]
 position = Vector2( -9.24588, -43.4004 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
@@ -133,7 +132,6 @@ position = Vector2( 840, 480 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 volume_db = -6.0
-autoplay = true
 
 [node name="Score" type="Control" parent="."]
 anchor_left = 0.5

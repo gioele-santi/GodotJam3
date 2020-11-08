@@ -14,12 +14,17 @@ onready var albero: Albero = $Albero
 var score = 0
 var playing := false
 
+var bgm = load("res://asset/audio/bgm/bgm1.wav")
+
 func _ready() -> void:
 	timer.set_wait_time(spawnTime(score))
 	blu.type = 0
 	rosso.type = 1
 	verde.type = 2
 	giallo.type = 3 
+	
+	$AudioStreamPlayer.stream = bgm
+	$AudioStreamPlayer.play()
 
 func start_game() -> void:
 	playing = true
@@ -78,3 +83,6 @@ func scoreDown():
 
 func _on_Albero_gameover() -> void:
 	print("Gioco finito, cambiare schermata o dare un messaggio")
+	bgm = load("res://asset/audio/bgm/gameover.wav")
+	$AudioStreamPlayer.stream = bgm
+	$AudioStreamPlayer.play()
